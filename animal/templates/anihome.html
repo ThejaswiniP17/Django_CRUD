@@ -1,0 +1,248 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block style %}
+<!-- <link rel="stylesheet" href="{% static 'css/css/anihomehome.css' %}"> -->
+<link rel="stylesheet" href="{% static 'css/anihomehome.css' %}">
+{% endblock style %}
+
+<body>
+{% block content %}
+<div class="container">
+    <header class="header">
+        <h1>Create an Animal Profile</h1>
+        <button class="btn-create"><a href="{% url 'createani' %}">Create New Profile</a></button>
+    </header>
+
+    <hr>
+
+    <section class="introduction">
+        <i>Get closer to nature by learning about the incredible variety of animals and their survival secrets.</i>
+        <!-- <img class="featured-image" src="{% static 'images/all animalsss.jpg' %}" alt="All animalsss"> -->
+    </section>
+
+    <section class="animal-profiles">
+        <!-- <h2>"Discover the Wonders of the Animal Kingdom"</h2> -->
+        <h2 class="dark-animal-kingdom">Discover the Wonders of the Animal Kingdom</h2>
+
+        <div class="profiles-grid">
+            {% for i in data %}
+            <div class="animal-card">
+                <!-- <img src="{% static 'images/animal-placeholder.jpg' %}" alt="{{ i.aname }}" class="animal-image"> -->
+                <h3 class="animal-name">Name: {{ i.aname }}</h3>
+                <p><b>Type:</b> {{ i.animal_type }}</p>
+                <p><b>Food:</b> {{ i.afood }}</p>
+                <p><b>Habitat:</b> {{ i.ahabitat }}</p>
+                <p><b>Color:</b> {{ i.acolor }}</p>
+                <p><b>Special Abilities:</b> {{ i.aspecial_abilities }}</p>
+                <!-- <p><b>image:</b></p><img src="{{ i.aimage.url }}" alt="no image"></p> -->
+                <!-- <img src="{{ i.aimage.url }}" alt="Animal Image"> -->
+                {% if i.aimage %}
+                    <img src="{{ i.aimage.url }}" alt="{{ i.aname }}">
+                {% else %}
+                    <img src="{% static 'images/all animalsss.jpg' %}" alt="Default Animal Image">
+                {% endif %}
+
+
+
+
+                <div class="card-buttons">
+                    <button class="btn-update"><a href="{% url 'updateani' i.id %}">Update</a></button>
+                    <button class="btn-delete"><a href="{% url 'deleteani' i.id %}">Delete</a></button>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+</div>
+
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #eac7cfe0;
+        /* background-image: url("https://i.pinimg.com/736x/c8/c1/10/c8c1100589f558839bec3314db4d54a9.jpg:"); */
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        width: 98%;
+        margin: 0 auto;
+        /* background-size: cover;
+        background-position: center; */
+        background-image: url("https://i.pinimg.com/736x/c8/c1/10/c8c1100589f558839bec3314db4d54a9.jpg"); /* Your image path */
+        padding: 20px;
+    }
+
+    .header {
+        text-align: center;
+        background-color: #040504;
+        color: white;
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .header h1 {
+        font-size: 36px;
+        margin: 0;
+    }
+
+    .btn-create a {
+        color: white;
+        text-decoration: none;
+        background-color: #767272ce;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 18px;
+    }
+
+    .btn-create a:hover {
+        background-color: #555;
+    }
+
+    .introduction {
+        text-align: center;
+        margin: 40px 0;
+    }
+
+    .introduction i {
+        font-size: 34px;
+        margin-bottom: 20px;
+        color: white;
+    }
+
+    /* .featured-image {
+        width: 90%;
+        border-radius: 8px;
+    } */
+
+    .animal-profiles {
+        margin-top: 40px;
+    }
+
+    .header h1 {
+    font-size: 48px; /* Bigger size */
+    font-weight: bold;
+    color: #f8f8f8; /* Light color */
+    text-transform: uppercase; /* Uppercase for impact */
+    letter-spacing: 3px; /* Spacing for style */
+    font-family: 'Georgia', serif; /* Elegant font */
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5); /* Stylish shadow */
+}
+
+.animal-profiles h2 {
+    text-align: center;
+    font-size: 60px; /* Bigger font size */
+    font-weight: bold;
+    font-style: italic; /* Italic text */
+    background: linear-gradient(45deg, #e78414, #f4075e); /* Gradient text */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 8px rgba(233, 50, 89, 0.906), 3px 3px 10px rgba(229, 46, 113, 0.8); /* Glowing effect */
+    letter-spacing: 2px; /* Slight spacing for elegance */
+    font-family: 'Georgia', serif; /* Stylish font */
+    margin-bottom: 30px;
+}
+.dark-animal-kingdom {
+    font-size: 70px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-align: center;
+    font-family: 'Georgia', serif;
+    background: linear-gradient(45deg, #151515, #b86363ed, #0a0909); /* Dark gradient */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 4px 4px 8px rgba(213, 23, 23, 0.8), 
+                 2px 2px 6px rgba(219, 74, 127, 0.6); /* Dark shadow + warm glow */
+    animation: glow 9s infinite alternate;
+}
+
+/* Glowing effect */
+@keyframes glow {
+    0% {
+        text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.8), 
+                     2px 2px 6px rgba(255, 140, 0, 0.6);
+    }
+    100% {
+        text-shadow: 6px 6px 12px rgba(0, 0, 0, 1), 
+                     4px 4px 10px rgba(255, 69, 0, 0.8);
+    }
+}
+
+    .animal-profiles h2 {
+        text-align: center;
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+
+    .profiles-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 30px;
+        margin: 0 auto;
+    }
+
+    .animal-card {
+        background-color: rgba(255, 255, 255, 0.54);
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        overflow: hidden;
+    }
+
+    .animal-card img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        object-fit: cover;
+    }
+
+    .animal-name {
+        font-size: 22px;
+        font-weight: bold;
+        margin-top: 15px;
+    }
+
+    .animal-card p {
+        font-size: 16px;
+        margin: 10px 0;
+        color: #333;
+    }
+
+    .card-buttons {
+        margin-top: 20px;
+    }
+
+    .card-buttons button {
+        padding: 10px 20px;
+        margin: 10px 5px;
+        border-radius: 5px;
+        border: none;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .btn-update {
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    .btn-update:hover {
+        background-color: #45a049;
+    }
+
+    .btn-delete {
+        background-color: #f44336;
+        color: white;
+    }
+
+    .btn-delete:hover {
+        background-color: #e53935;
+    }
+
+</style>
+
+{% endblock content %}
+</body>

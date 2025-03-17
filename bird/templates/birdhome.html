@@ -1,0 +1,168 @@
+{% extends 'main.html' %}
+
+{% block title %}
+Bird Homepage
+{% endblock title %}
+
+{% block style %}
+    <style>
+        body {
+            /* background-image: url('https://img.freepik.com/premium-photo/cute-bird-cinematic-lighting-effect-bird-s-eye-view-isometric-style-ai-generated_606151-157.jpg'); */
+            background-image: url('https://i.pinimg.com/736x/2b/90/cd/2b90cd9b06e2399603b03a7b97b2f7c7.jpg');
+            background-size: contain;  
+            background-position: center;
+            background-color: #eeebeb;  
+            background-repeat: repeat; 
+            font-family: Arial, sans-serif;
+            color: #ec07f0;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .background-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.01);
+            backdrop-filter: blur(2px);
+            z-index: -1;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        h3 {
+            font-size: 28px;
+            margin-bottom: 30px;
+            color: #f1c40f;
+        }
+
+        .bird-card {
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #031350ed;
+            border-radius: 10px;
+            background-color: rgba(6, 6, 52, 0.159);
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease-in-out;
+            display: inline-block;
+            text-align: left;
+            width: 50%;
+        }
+
+        .bird-card:hover {
+            box-shadow: 0px 8px 16px rgba(17, 17, 17, 0.2);
+        }
+
+        .bird-info p {
+            font-size: 20px;
+            margin: 15px 0; 
+            color: #eeebeb;
+            font-family: 'Arial', sans-serif; 
+            line-height: 1.6;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+            letter-spacing: 1px;
+            padding: 5px;
+            background-color: rgba(124, 118, 118, 0.208);
+            border-radius: 5px;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease; 
+        }
+
+        .bird-info strong {
+            color: #0b85d7;
+        }
+
+        .bird-image {
+            width: 600px; /* Set a fixed width */
+            height: 300px; /* Set a fixed height */
+            object-fit: cover; /* Ensures the image covers the area properly */
+            border-radius: 10px;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+            margin-top: 10px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            font-size: 18px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+            margin: 10px 5px;
+            text-align: center;
+        }
+
+        .btn-create {
+            background-color: #0be369ee;
+            color: rgba(249, 18, 191, 0.621);
+            text-decoration: none;
+        }
+
+        .btn-create:hover {
+            background-color: #2783aef8;
+        }
+
+        .btn-update, .btn-delete {
+            background-color: #e74c3c;
+            color: rgb(238, 224, 224);
+        }
+
+        .btn-update:hover, .btn-delete:hover {
+            background-color: #043f2a;
+        }
+
+        .btn-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+{% endblock style %}
+
+{% block content %}
+<div class="background-overlay"></div>
+
+<h1>Welcome to the Bird Homepage</h1>
+<a href="{% url 'createbd' %}">
+    <button class="btn btn-create">Create New Bird</button>
+</a>
+
+<h3>Details of Birds</h3>
+
+{% for b in input %}
+<div class="bird-card">
+    <div class="bird-info">
+        <p><strong>Name:</strong> {{ b.bname }}</p>
+        <p><strong>Food:</strong> {{ b.bfood }}</p>
+        <p><strong>Scientific Name:</strong> {{ b.bScientificName }}</p>
+        <p><strong>Habitat:</strong> {{ b.bHabitat }}</p>
+        <p><strong>Migration Pattern:</strong> {{ b.bMigrationPattern }}</p>
+
+        {% if b.bimg %}
+            <p><strong>Image:</strong></p>
+            <img src="{{ b.bimg.url }}" alt="Bird Image" class="bird-image">
+        {% else %}
+            <p><em>No image available</em></p>
+        {% endif %}
+    </div>
+
+    <div class="btn-container">
+        <a href="{% url 'updatebd' b.id %}">
+            <button class="btn btn-update">Update</button>
+        </a>
+        <a href="{% url 'deletebd' b.id %}">
+            <button class="btn btn-delete">Delete</button>
+        </a>
+    </div>
+</div>
+{% endfor %}
+{% endblock content %}

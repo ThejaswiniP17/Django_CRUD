@@ -1,0 +1,124 @@
+.forest-home {
+  text-align: center;
+  padding: 50px;
+  font-family: Arial, sans-serif;
+  /* background-color: #b1f7b1; */
+  background-image: url(https://th.bing.com/th/id/OIP.FE1nPDxobwAh4_wfhIorMAHaEK?rs=1&pid=ImgDetMain);
+  /* background-image: url(https://img.freepik.com/premium-photo/blurred-images-bamboo-forest-arashiyama_662214-253232.jpg); */
+  
+
+  .forest-title {
+    font-size: 5rem; /* Increased font size */
+    font-weight: bold;
+    color: #dc0d22; /* Warm, earthy color */
+    font-family: 'Georgia', serif; /* Stylish font */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Adds subtle shadow */
+    margin-bottom: 20px;
+  }
+  
+  /* Apply a cream filter to the background image */
+  .forest-home {
+    text-align: center;
+    padding: 50px;
+    font-family: Arial, sans-serif;
+    background-image: url(https://th.bing.com/th/id/OIP.FE1nPDxobwAh4_wfhIorMAHaEK?rs=1&pid=ImgDetMain);
+    background-size: cover;
+    background-position: center;
+    filter: brightness(90%) sepia(20%); /* Cream color effect */
+  }
+  
+
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+.description {
+  font-size: 1.6rem;
+  color: #ecf5ef;
+  margin-bottom: 30px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Forest Image */
+.forest-image-container {
+  margin: 30px 0;
+}
+
+.forest-image {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.forest-image {
+  width: 80%; /* Ensures the image takes the full width of its container */
+  max-width: 2200px; /* Increases the maximum width */
+  height: auto; /* Maintains the aspect ratio */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Button Container */
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  background: #ffffffae;
+  border: 1px solid #c3bcbc;
+  border-radius: 10px;
+  padding: 20px;
+  width: 350px; /* Increased width */
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-img {
+  width: 250px; /* Increased size */
+  height: 250px; /* Increased size */
+  border-radius: 70%;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+  font-size: 1.8rem;
+  color: #34495e;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 1rem;
+  color: #123eda;
+  margin-bottom: 20px;
+}
+
+.btn-link {
+  display: inline-block;
+  background-color: #3498db;
+  color: white;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-link:hover {
+  background-color: #2980b9;
+}

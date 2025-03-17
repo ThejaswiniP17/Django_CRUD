@@ -1,0 +1,106 @@
+/* General Reset */
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url(https://th.bing.com/th/id/OIP.FE1nPDxobwAh4_wfhIorMAHaEK?rs=1&pid=ImgDetMain);
+    /* font-family: Arial, sans-serif;
+    background: url('static/images/lion.jpg') no-repeat center center fixed; */
+    /* background: url('../images/lion.jpg') no-repeat center center fixed; */
+
+    background-size: cover;
+    color: #333;
+}
+
+/* Header Section */
+.header {
+    text-align: center;
+    margin: 20px;
+}
+
+.header h1 {
+    color: #2e8b57;
+    font-size: 2.5em;
+}
+
+.btn-create {
+    background: #2e8b57;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-create a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+/* Introduction Section */
+.introduction {
+    text-align: center;
+    margin: 30px auto;
+    max-width: 800px;
+    padding: 20px;
+    background: rgba(231, 192, 192, 0.8);
+    background-image: url(https://th.bing.com/th/id/OIP.FE1nPDxobwAh4_wfhIorMAHaEK?rs=1&pid=ImgDetMain);
+    border-radius: 10px;
+}
+
+.introduction h2 {
+    color: #2e8b57;
+    font-size: 1.8em;
+}
+
+.featured-image {
+    width: 100%;
+    max-width: 500px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+/* Animal Profiles */
+.animal-profiles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.animal-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+.animal-card h3 {
+    color: #2e8b57;
+    margin-bottom: 10px;
+}
+
+.animal-card p {
+    margin: 5px 0;
+}
+
+.card-buttons button {
+    background: #2e8b57;
+    border: none;
+    padding: 8px 15px;
+    margin: 10px 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.card-buttons button a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.card-buttons button:hover {
+    background: #0bdb69;
+}

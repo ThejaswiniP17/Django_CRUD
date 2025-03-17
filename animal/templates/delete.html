@@ -1,0 +1,160 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<div class="page-container">
+    <!-- Navbar -->
+    <nav class="navbar">
+        <h1>"The greatness of a nation can be judged by the way its animals are treated." – <span class="gandhi">Mahatma Gandhi</span></h1>
+
+    </nav>
+
+    <!-- Delete Confirmation Section -->
+    <div class="delete-container">
+        <div class="delete-card">
+            <h1>Are You Sure?</h1>
+            <p>This action is irreversible. Once deleted, the data cannot be recovered.</p>
+            <form action="" method="POST">
+                {% csrf_token %}
+                <button class="btn-confirm" type="submit">Yes, Delete</button>
+            </form>
+            <button class="btn-cancel">
+                <a href="{% url 'anihome' %}">No, Cancel</a>
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Animal Management System. All rights reserved.</p>
+    </footer>
+</div>
+
+
+{% load static %}
+<style>
+   body {
+    background-image: url('https://i.pinimg.com/736x/66/1f/7b/661f7bef0873660240284845d3a300c6.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+    
+
+    .page-container {
+        display: flex;
+        flex-direction: column;
+        min-height: 90vh;
+    }
+
+    /* Navbar */
+    .navbar {
+        background-color: #34495e;
+        padding: 20px;
+        text-align: center;
+        color: white;
+    }
+
+    .navbar h1 {
+        margin: 0;
+        font-size: 24px;
+    }
+    .navbar h1 {
+    margin: 0;
+    font-size: 24px;
+    font-style: italic;
+    font-family: "Georgia", serif;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+
+    /* Delete Confirmation Section */
+    .delete-container {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px 20px;
+    }
+
+    .delete-card {
+        background: rgba(0, 0, 0, 0.8);
+        border-radius: 35px;
+        padding: 30px;
+        text-align: center;
+        width: 90%;
+        max-width: 800px;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    h1 {
+        font-size: 28px;
+        margin-bottom: 20px;
+        color: #ff5252;
+    }
+
+    p {
+        font-size: 16px;
+        margin-bottom: 30px;
+        color: #ccc;
+    }
+
+    form {
+        margin-bottom: 20px;
+    }
+
+    .btn-confirm, .btn-cancel {
+        font-size: 16px;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 5px;
+        text-transform: uppercase;
+        cursor: pointer;
+        width: 100%;
+        margin: 10px 0;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .btn-confirm {
+        background-color: #e74c3c;
+        color: white;
+    }
+
+    .btn-confirm:hover {
+        background-color: #c0392b;
+        transform: scale(1.05);
+    }
+
+    .btn-cancel {
+        background-color: #27ae27;
+        color: white;
+    }
+
+    .btn-cancel:hover {
+        background-color: #1e8449;
+        transform: scale(1.05);
+    }
+
+    .btn-cancel a {
+        text-decoration: none;
+        color: white;
+        display: block;
+    }
+
+    /* Footer */
+    .footer {
+        background-color: #2c3e50;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        margin-top: auto;
+    }
+
+    .footer p {
+        margin: 0;
+        font-size: 14px;
+    }
+</style>
+{% endblock content %}

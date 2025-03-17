@@ -1,0 +1,21 @@
+
+  
+  <body>
+    <nav class="navbar">
+      <div class="logo">🌳 Forest Project</div>
+      <ul class="nav-links">
+        <li><a href="{% url 'home' %}"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="{% url 'anihome' %}"><i class="fas fa-paw"></i> Animals</a></li>
+        <li><a href="{% url 'birdhome' %}"><i class="fas fa-dove"></i> Birds</a></li>
+        <!-- <li><a href="#"><i class="fas fa-tree"></i> Forests</a></li> -->
+        <li><a href="{% url 'about' %}"><i class="fas fa-info-circle"></i> About Us</a></li>
+        <li><a href="{% url 'contact' %}"><i class="fas fa-envelope"></i> Contact</a></li>
+      </ul>
+      <form class="search-bar" action="#" method="GET">
+        <input type="text" placeholder="Search..." name="q">
+        <button type="submit">Submit</button>
+      </form>
+    </nav>
+  </body>
+  
+  

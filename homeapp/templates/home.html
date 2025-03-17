@@ -1,0 +1,36 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock style %}
+
+{% block content %}
+<div class="forest-home">
+  <h1 class="forest-title">Discover the Wonders of the Forest</h1>
+  <i class="description">Explore the diverse wildlife of our forest. <br>
+    Discover the fascinating world of animals and birds, their habitats, and their roles in maintaining the ecosystem.</i>
+  
+  <!-- Forest Image -->
+  <div class="forest-image-container">
+    <img src="{% static 'images/forest.jpg' %}" alt="Forest" class="forest-image">
+  </div>
+
+  <div class="button-container">
+    <!-- Animal Section -->
+    <div class="btn">
+      <img src="{% static 'images/bigganimal.jpg' %}" alt="Animal" class="btn-img">
+      <h2>Animals</h2>
+      <p>Experience the majestic world of animals, from the mighty predators to gentle herbivores.</p>
+      <a href="{% url 'anihome' %}" class="btn-link">Explore Animals</a>
+    </div>
+
+    <!-- Bird Section -->
+    <div class="btn">
+      <img src="{% static 'images/colorbird.jpg' %}" alt="Bird" class="btn-img">
+      <h2>Birds</h2>
+      <p>Delight in the vibrant world of birds, their songs, and their colorful feathers.</p>
+      <a href="{% url 'birdhome' %}" class="btn-link">Explore Birds</a>
+    </div>
+  </div>
+</div>
+{% endblock content %}

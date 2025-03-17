@@ -1,0 +1,102 @@
+{% block content %}
+<h3 class="form-title">Bird Information Form</h3>
+
+<form action="" method="POST" class="form-container">
+    {% csrf_token %}
+    
+    <div class="form-group">
+        <label for="bname">Bird Name:</label>
+        <input type="text" id="bname" name="bname" value="{{ input.bname }}" class="form-input" required>
+    </div>
+
+    <div class="form-group">
+        <label for="bfood">Food:</label>
+        <input type="text" id="bfood" name="bfood" value="{{ input.bfood }}" class="form-input" required>
+    </div>
+
+    <div class="form-group">
+        <label for="bScientificName">Scientific Name:</label>
+        <input type="text" id="bScientificName" name="bScientificName" value="{{ input.bScientificName }}" class="form-input" required>
+    </div>
+
+    <div class="form-group">
+        <label for="bHabitat">Habitat:</label>
+        <input type="text" id="bHabitat" name="bHabitat" value="{{ input.bHabitat }}" class="form-input" required>
+    </div>
+
+    <div class="form-group">
+        <label for="bMigrationPattern">Migration Pattern:</label>
+        <input type="text" id="bMigrationPattern" name="bMigrationPattern" value="{{ input.bMigrationPattern }}" class="form-input" required>
+    </div>
+
+    <!-- Uncomment if you need image upload -->
+    <!--
+    <div class="form-group">
+        <label for="bimg">Image:</label>
+        <input type="file" name="bimg" id="bimg" class="form-input">
+    </div>
+    -->
+
+    <button type="submit" class="submit-btn">Submit</button>
+</form>
+
+<style>
+    .form-title {
+        font-size: 34px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        text-align: center;
+        color: #340bba;
+    }
+
+    .form-container {
+        width: 50%;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #1322a580;
+        border-radius: 8px;
+        background-color: #d1e3d981;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-group label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: #333;
+    }
+
+    .form-group input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #de1212c0;
+        border-radius: 5px;
+        font-size: 14px;
+        box-sizing: border-box;
+    }
+
+    .form-group input:focus {
+        border-color: #4CAF50;
+        outline: none;
+    }
+
+    .submit-btn {
+        width: 100%;
+        padding: 10px;
+        background-color: #4CAF50;
+        color: rgba(255, 255, 255, 0.725);
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .submit-btn:hover {
+        background-color: #45a049;
+    }
+</style>
+
+{% endblock content %}
